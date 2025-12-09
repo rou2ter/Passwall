@@ -12,8 +12,6 @@ echo "Running as root..."
 sleep 2
 clear
 
-uci set system.@system[0].zonename='Asia/Tehran'
-
 uci set network.wan.peerdns="0"
 
 uci set network.wan6.peerdns="0"
@@ -21,8 +19,6 @@ uci set network.wan6.peerdns="0"
 uci set network.wan.dns='1.1.1.1'
 
 uci set network.wan6.dns='2001:4860:4860::8888'
-
-uci set system.@system[0].timezone='<+0330>-3:30'
 
 uci commit system
 
@@ -38,7 +34,7 @@ if [ "$SNNAP" == "SNAPSHOT" ]; then
 
 echo -e "${YELLOW} SNAPSHOT Version Detected ! ${NC}"
 
-rm -f passwalls.sh && wget https://raw.githubusercontent.com/amirhosseinchoghaei/Passwall/main/passwalls.sh && chmod 777 passwalls.sh && sh passwalls.sh
+rm -f passwalls.sh && wget https://raw.githubusercontent.com/rou2ter/Passwall/main/passwalls.sh && chmod 777 passwalls.sh && sh passwalls.sh
 
 exit 1
 
