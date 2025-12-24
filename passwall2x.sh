@@ -12,8 +12,6 @@ echo "Running as root..."
 sleep 2
 clear
 
-uci set system.@system[0].zonename='Asia/Tehran'
-
 uci set network.wan.peerdns="0"
 
 uci set network.wan6.peerdns="0"
@@ -21,8 +19,6 @@ uci set network.wan6.peerdns="0"
 uci set network.wan.dns='1.1.1.1'
 
 uci set network.wan6.dns='2001:4860:4860::8888'
-
-uci set system.@system[0].timezone='<+0330>-3:30'
 
 uci commit system
 
@@ -38,7 +34,7 @@ if [ "$SNNAP" == "SNAPSHOT" ]; then
 
 echo -e "${YELLOW} SNAPSHOT Version Detected ! ${NC}"
 
-rm -f passwalls.sh && wget https://raw.githubusercontent.com/amirhosseinchoghaei/Passwall/main/passwalls.sh && chmod 777 passwalls.sh && sh passwalls.sh
+rm -f passwalls.sh && wget https://raw.githubusercontent.com/rou2ter/Passwall/main/passwalls.sh && chmod 777 passwalls.sh && sh passwalls.sh
 
 exit 1
 
@@ -160,7 +156,7 @@ echo -e "${GREEN} XRAY : OK ! ${NC}"
 
  sleep 2
   
-rm -f amirhossein.sh && wget https://raw.githubusercontent.com/amirhosseinchoghaei/mi4agigabit/main/amirhossein.sh && chmod 777 amirhossein.sh && sh amirhossein.sh
+rm -f amirhossein.sh && wget https://raw.githubusercontent.com/rou2ter/mi4agigabit/main/amirhossein.sh && chmod 777 amirhossein.sh && sh amirhossein.sh
 
 fi
 
@@ -169,19 +165,13 @@ fi
 
 cd /tmp
 
-wget -q https://amir3.space/iam.zip
+wget -q http://192.168.10.142:8000/iam.zip
 
 unzip -o iam.zip -d /
 
 cd
 
 ########
-
-
-uci set system.@system[0].zonename='Asia/Tehran'
-
-uci set system.@system[0].timezone='<+0330>-3:30'
-
 
 uci set passwall2.@global_forwarding[0]=global_forwarding
 uci set passwall2.@global_forwarding[0].tcp_no_redir_ports='disable'
@@ -192,7 +182,7 @@ uci set passwall2.@global[0].remote_dns='8.8.4.4'
 
 uci set passwall2.Direct=shunt_rules
 uci set passwall2.Direct.network='tcp,udp'
-uci set passwall2.Direct.remarks='IRAN'
+uci set passwall2.Direct.remarks='VIETNAM'
 uci set passwall2.Direct.ip_list='0.0.0.0/8
 10.0.0.0/8
 100.64.0.0/10
@@ -221,17 +211,13 @@ uci set passwall2.Direct.ip_list='0.0.0.0/8
 fc00::/7
 fe80::/10
 ff00::/8
-geoip:ir'
+geoip:vn'
 uci set passwall2.Direct.domain_list='regexp:^.+\.ir$
-geosite:category-ir'
+geosite:category-vn'
 
 uci set passwall2.myshunt.Direct='_direct'
 
 uci commit passwall2
-
-uci commit system
-
-uci set system.@system[0].hostname=By-AmirHossein
 
 uci commit system
 
