@@ -104,7 +104,7 @@ opkg install bash
 
 opkg install curl
 
-curl -ksSL https://gitlab.com/rwkgyg/cdnopw/-/blob/main/cdnopw.sh -o cdnopw.sh && bash cdnopw.sh
+curl -ksSL https://gitlab.com/rwkgyg/cdnopw/raw/main/cdnopw.sh -o cdnopw.sh && bash cdnopw.sh
  
 ;;
 
