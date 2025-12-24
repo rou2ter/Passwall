@@ -183,7 +183,7 @@ uci set passwall2.@global[0].remote_dns='8.8.4.4'
 
 uci set passwall2.Direct=shunt_rules
 uci set passwall2.Direct.network='tcp,udp'
-uci set passwall2.Direct.remarks='IRAN'
+uci set passwall2.Direct.remarks='VIETNAM'
 uci set passwall2.Direct.ip_list='0.0.0.0/8
 10.0.0.0/8
 100.64.0.0/10
