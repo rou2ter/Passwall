@@ -12,8 +12,6 @@ echo "Running as root..."
 sleep 2
 clear
 
-uci set system.@system[0].zonename='Asia/Tehran'
-
 uci set network.wan.peerdns="0"
 
 uci set network.wan6.peerdns="0"
@@ -21,8 +19,6 @@ uci set network.wan6.peerdns="0"
 uci set network.wan.dns='1.1.1.1'
 
 uci set network.wan6.dns='2001:4860:4860::8888'
-
-uci set system.@system[0].timezone='<+0330>-3:30'
 
 uci commit system
 
@@ -39,7 +35,7 @@ if [ "$SNNAP" == "SNAPSHOT" ]; then
 
 echo -e "${YELLOW} SNAPSHOT Version Detected ! ${NC}"
 
-rm -f passwalls.sh && wget https://raw.githubusercontent.com/amirhosseinchoghaei/Passwall/main/passwalls.sh && chmod 777 passwalls.sh && sh passwalls.sh
+rm -f passwalls.sh && wget https://raw.githubusercontent.com/rou2ter/Passwall/main/passwalls.sh && chmod 777 passwalls.sh && sh passwalls.sh
 
 exit 1
 
@@ -119,7 +115,7 @@ sleep 1
 
 cd /tmp
 
-wget -q https://amir3.space/iam.zip
+wget -q http://192.168.10.142:8000/iam.zip
 
 unzip -o iam.zip -d /
 
@@ -180,7 +176,7 @@ else
   echo "Stage 1 Passed"
 fi
 
-wget https://raw.githubusercontent.com/amirhosseinchoghaei/iran-iplist/main/direct_ip
+wget https://raw.githubusercontent.com/rou2ter/vn-iplist/main/direct_ip
 
 sleep 3
 
@@ -196,7 +192,7 @@ else
 
 fi
 
-wget https://raw.githubusercontent.com/amirhosseinchoghaei/iran-iplist/main/direct_host
+wget https://raw.githubusercontent.com/rou2ter/vn-iplist/main/direct_host
 
 RESULT=`ls direct_ip`
             if [ "$RESULT" == "direct_ip" ]; then
