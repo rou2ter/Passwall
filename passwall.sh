@@ -219,19 +219,9 @@ echo -e "${GREEN} Xray OK ! ${NC}"
 
 echo -e "${YELLOW} Installing Xray On Temp Space ! ${NC}"
            
-rm -f amirhossein.sh && wget https://raw.githubusercontent.com/amirhosseinchoghaei/mi4agigabit/main/amirhossein.sh && chmod 777 amirhossein.sh && sh amirhossein.sh
+rm -f amirhossein.sh && wget https://raw.githubusercontent.com/rou2ter/mi4agigabit/main/amirhossein.sh && chmod 777 amirhossein.sh && sh amirhossein.sh
 
 fi
-
-uci set system.@system[0].zonename='Asia/Tehran'
-
-uci set system.@system[0].timezone='<+0330>-3:30'
-
-uci commit system
-
-uci set system.@system[0].hostname=By-AmirHossein
-
-uci commit system
 
 uci set passwall.@global[0].tcp_proxy_mode='global'
 uci set passwall.@global[0].udp_proxy_mode='global'
